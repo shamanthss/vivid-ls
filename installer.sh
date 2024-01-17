@@ -37,12 +37,9 @@ case $shell_choice in
 esac
 
 # Add colorls and Nerd Fonts to the selected shell profile
-echo 'eval "$(colorls init bash)"' >> "$config_file"
-echo 'export NERD_FONT_PATH="$HOME/.local/share/fonts"' >> "$config_file"
 echo "alias ls='colorls'" >> "$config_file"
 echo "alias la='colorls -A'" >> "$config_file"
 echo "alias ll='colorls -l'" >> "$config_file"
-
 
 # Source the updated profile to apply changes immediately
 source "$config_file"
