@@ -12,7 +12,7 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.'
 
-#!/bin/bash
+#!/bin/sh
 
 # Prompt the user to select shell configuration file
 pick_bash() {
@@ -48,7 +48,10 @@ echo "alias ll='colorls -l'" >> "$config_file"
 source "$config_file"
 
 echo "COLORLS and the chosen Nerd Font have been successfully installed and configured in $config_file."
-echo "Please Close existing Terminal and Type ls on new Terminal to see the Magic  "
+font_name=$(basename "$font_url")
+foname=$(echo "$font_name" | cut -d'.' -f1)
+echo "Kindly changed the font in you terminal to $foname Nerd Font"
+echo "Under File > Preference > Font > Select $foname Nerd Font > Save > Apply and Close and Open a new terminal to see the Magic "
 }
 
 # Prompt the user to select a Nerd Font
